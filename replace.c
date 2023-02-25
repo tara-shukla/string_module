@@ -1,9 +1,10 @@
 /*--------------------------------------------------------------------*/
 /* replace.c                                                          */
-/* Author: ???                                                        */
+/* Author: Tara Shukla                                                */
 /*--------------------------------------------------------------------*/
 
 #include "str.h"
+#include <string.h> /*TAKE THIS OUT AFTER TESTING PLZ LMAO*/
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
