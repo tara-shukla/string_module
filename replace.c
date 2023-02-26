@@ -21,7 +21,18 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   /* Insert your code here. */
+
+   if (Str_getLength(pcFrom) ==0){
+      for (int i = 0; i<Str_getLength(pcLine);i++){
+         putchar(pcLine[i]);
+      }
+      return 0;
+   }
+
+   /*use the regular stuff here first. replace and erase this when done debugging*/
+
+   return 0; /*erase this*/
+
 }
 
 /*--------------------------------------------------------------------*/
@@ -39,6 +50,7 @@ static size_t replaceAndWrite(const char *pcLine,
 
 int main(int argc, char *argv[])
 {
+   /*
    enum {MAX_LINE_SIZE = 4096};
    enum {PROPER_ARG_COUNT = 3};
 
@@ -57,8 +69,26 @@ int main(int argc, char *argv[])
    pcTo = argv[2];
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
+      /* Insert your code here. 
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
+   */
+
+   char test[] = "The quick brown fox jumped over the lazy dog";
+   int testLen = Str_getLength(test);
+   printf("the length is"+testLen);
+
+   char testCopy[testLen];
+   *testCopy = Str_copy(testCopy,*test);
+
+   char add[] = " and they barked.";
+   char cat [500];
+   *cat = Str_concat(*test,*add);
+
+   printf("comparing test to add should be neg. here's result: " + Str_compare(test,add));
+
+   char target[] = "fox";
+   printf("searching for target in test reveals: " + Str_search(test,target));
+
 }
