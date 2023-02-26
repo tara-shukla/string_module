@@ -75,20 +75,5 @@ int main(int argc, char *argv[])
    return 0;
    */
 
-   char test[] = "The quick brown fox jumped over the lazy dog";
-   int testLen = Str_getLength(test);
-   printf("the length is"+testLen);
-
-   char testCopy[testLen];
-   *testCopy = Str_copy(testCopy,*test);
-
-   char add[] = " and they barked.";
-   char cat [500];
-   *cat = Str_concat(*test,*add);
-
-   printf("comparing test to add should be neg. here's result: " + Str_compare(test,add));
-
-   char target[] = "fox";
-   printf("searching for target in test reveals: " + Str_search(test,target));
 
 }

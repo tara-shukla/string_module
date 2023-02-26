@@ -25,10 +25,12 @@ char *Str_copy(char dest[], const char *src[]){ /*char *strcpy (char *dest, cons
     assert(src != NULL);
     
     
-    while (src[i]!='\0'){
+    while (*src[i]!='\0'){
         dest[i] = *src[i];
         i++;
     }
+
+    
     return *dest;
 
 }
@@ -79,7 +81,7 @@ char *Str_search (const char location[], const char target[]){
     assert (location!=NULL);
     assert (target!=NULL);
 
-    if (subLen == 0) return location;
+    if (subLen == 0) return &location;
 
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
