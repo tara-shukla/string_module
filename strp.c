@@ -31,13 +31,23 @@ char *Str_copy (char *dest, const char *src){
         src++;
     }
     *dest = '\0';
-    printf(*dest);
     return dest;
 }
 
 /*appends src string to end of dest string*/
 char *Str_concat(char *dest, const char *src){
-    return '\0';
+
+    int destLen = Str_getLength(dest);
+    assert(dest!= NULL);
+    assert(src != NULL);
+    
+
+    /*move the dest pointer to the end of dest array*/
+    /*then copy src into that memory spot*/
+   
+    Str_copy(dest+destLen, src);
+    
+    return dest;
 }
 
 /*compares str1 to str2*/
