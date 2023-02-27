@@ -101,6 +101,7 @@ char *Str_search (const char location[], const char target[]){
                 x++;
             }
         }
+        i++;
     }
 
     /*match not found return null*/
