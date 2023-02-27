@@ -13,16 +13,16 @@
 size_t Str_getLength(const char *str);
 
 /*makes a copy of the string pointed to src to the given destination string dest*/
-char *strcpy(char *dest, const char *src);
+char Str_copy(char *dest, const char *src);
 
 /*appends src string to end of dest string*/
-char *strcat(char *dest, const char *src);
+char *Str_concat(char *dest, const char *src);
 
 /*compares str1 to str2*/
-int strcmp(const char *str1, const char *str2);
+int Str_comapare(const char *str1, const char *str2);
 
 /*searches for 1st occurence target str in location str*/
-char *strstr(const char *location, const char *target);
+char *Str_search(const char *location, const char *target);
 /*--------------------------------------------------------------------*/
 #endif
 
