@@ -25,12 +25,11 @@ char *Str_copy(char dest[], const char src[]){
     assert(dest!= NULL);
     assert(src != NULL);
     
-    
-    while (src[i+1]!='\0'){
+    while (src[i]!='\0'){
         dest[i] = src[i];
         i++;
     }
-    
+    dest[i] = '\0';
     return dest;
 
 }
