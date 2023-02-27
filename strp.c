@@ -52,8 +52,6 @@ char *Str_concat(char *dest, const char *src){
 
 /*compares str1 to str2*/
 int Str_compare (const char *str1, const char *str2){
-     int i = 0;
-
     assert(str1!= NULL);
     assert(str2 != NULL);
 
@@ -75,7 +73,39 @@ int Str_compare (const char *str1, const char *str2){
 
 /*searches for 1st occurence target str in location str*/
 char *Str_search (const char *location, const char *target){
+    int subLen = Str_getLength(target);
+
+    assert (location!=NULL);
+    assert (target!=NULL);
+
+    if (subLen == 0) return p;
+
+    /*iterate through location string, searching for first letter match*/
+    /*when found, iterate until match found; else break*/
+
+    while(*location!='\0'){
+        if(*location==*target){
+            int x = 0; /*substring iterator*/
+            while (x<subLen){
+                if (*target!=*location) {
+                    target -= x;
+                    location -=x;
+                    break;
+                }
+                if (x == subLen-1){
+                    return location;
+                }
+                x++;
+                target++;
+                location++;
+            }
+        }
+        location++;
+    }
+
+    /*match not found return null*/
     return '\0';
+
 }
 
 /*--------------------------------------------------------------------*/

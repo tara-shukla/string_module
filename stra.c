@@ -44,7 +44,7 @@ char *Str_concat(char dest[], const char src[]){
     /*move the dest pointer to the end of dest array*/
     /*then copy src into that memory spot*/
    
-    Str_copy(dest+destLen, src);
+    dest = Str_copy(dest+destLen, src);
 
     return dest;
 }
