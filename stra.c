@@ -77,12 +77,11 @@ int Str_compare (const char str1[], const char str2[]){
 char *Str_search (const char location[], const char target[]){
     int i = 0;
     int subLen = Str_getLength(target);
-    char *p = (char*)location[0];
 
     assert (location!=NULL);
     assert (target!=NULL);
 
-    if (subLen == 0) return p;
+    if (subLen == 0) return (char*) location [0];
 
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
@@ -96,8 +95,7 @@ char *Str_search (const char location[], const char target[]){
             while (x<subLen){
                 if (target[x]!=location[y]) break;
                 if (x == subLen-1){
-                    p=(char*)&location[i];
-                    return p;
+                    return(char*)&location[i];
                 }
                 y++;
                 x++;
