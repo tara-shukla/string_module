@@ -19,19 +19,19 @@ size_t Str_getLength(const char pcSrc[])
 }
 
 /*makes a copy of the src string to the dest string*/
-char *Str_copy(char dest[], const char *src[]){ /*char *strcpy (char *dest, const char *src)*/
+char *Str_copy(char dest[], const char src[]){ 
     int i = 0;
+
     assert(dest!= NULL);
     assert(src != NULL);
     
     
-    while (*src[i]!='\0'){
-        dest[i] = *src[i];
+    while (src[i]!='\0'){
+        dest[i] = src[i];
         i++;
     }
 
-    char *p = &dest;
-    return *p;
+    return dest;
 
 }
 
@@ -80,7 +80,7 @@ char *Str_search (const char location[], const char target[]){
     assert (location!=NULL);
     assert (target!=NULL);
 
-    if (subLen == 0) return &location;
+    if (subLen == 0) return location;
 
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
@@ -92,7 +92,7 @@ char *Str_search (const char location[], const char target[]){
             while (x<subLen){
                 if (target[x]!=location[y]) break;
                 if (x == subLen-1){
-                    return &location[i];
+                    return location[i];
                 }
                 y++;
                 x++;

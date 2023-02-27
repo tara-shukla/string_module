@@ -17,6 +17,7 @@ size_t Str_getLength(const char *pcSrc)
    while (*pcEnd != '\0')
       pcEnd++;
    return (size_t)(pcEnd - pcSrc);
+   
 }
 
 /*makes a copy of the string pointed to src to the given destination string dest*/
