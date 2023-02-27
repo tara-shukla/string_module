@@ -19,7 +19,7 @@ char *Str_copy(char *dest, const char *src);
 char *Str_concat(char *dest, const char *src);
 
 /*compares str1 to str2*/
-int Str_comapare(const char *str1, const char *str2);
+int Str_compare(const char *str1, const char *str2);
 
 /*searches for 1st occurence target str in location str*/
 char *Str_search(const char *location, const char *target);
