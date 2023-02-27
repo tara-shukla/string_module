@@ -78,7 +78,7 @@ char *Str_search (const char *location, const char *target){
     assert (location!=NULL);
     assert (target!=NULL);
 
-    if (subLen == 0) return p;
+    if (subLen == 0) return (char*)location;
 
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
@@ -93,7 +93,7 @@ char *Str_search (const char *location, const char *target){
                     break;
                 }
                 if (x == subLen-1){
-                    return location;
+                    return  (char*)location;
                 }
                 x++;
                 target++;
