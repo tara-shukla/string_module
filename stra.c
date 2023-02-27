@@ -88,7 +88,7 @@ char *Str_search (const char location[], const char target[]){
 
     
 
-    // while(location[i]!='\0'){
+    while(location[i]!='\0'){
         if(location[i]==target[0]){
             int y = i; /*in location string iterator*/
             int x = 0; /*substring iterator*/
