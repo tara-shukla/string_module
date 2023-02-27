@@ -46,12 +46,30 @@ char *Str_concat(char *dest, const char *src){
     /*then copy src into that memory spot*/
    
     Str_copy(dest+destLen, src);
-    
+
     return dest;
 }
 
 /*compares str1 to str2*/
 int Str_compare (const char *str1, const char *str2){
+     int i = 0;
+
+    assert(str1!= NULL);
+    assert(str2 != NULL);
+
+    while(*str1!='\0'){
+        if (*str1>*str2){
+            return 1;
+        }
+        if (*str1<*str2){
+            return -1;
+        }
+        str1++;
+        str2++;
+    }
+    if (*str2!='\0'){
+        return -1;
+    }
     return 0;
 }
 
