@@ -31,6 +31,7 @@ char *Str_copy (char *dest, const char *src){
         src++;
     }
     *dest = '\0';
+    printf(*dest);
     return dest;
 }
 
