@@ -20,13 +20,13 @@ size_t Str_getLength(const char *pcSrc)
 
 }
 
-/*makes a copy of the string pointed to src to the given destination string dest*/
+/*makes a copy of the src string in the dest string*/
 char *Str_copy (char *dest, const char *src){
-    assert(dest!= NULL); /*question: pointers = null vs *p = null?*/
+    assert(dest!= NULL); 
     assert(src != NULL);
 
     while (*src!='\0'){
-        *dest = *src;
+        dest = *src;
         dest++;
         src++;
     }
