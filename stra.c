@@ -1,3 +1,5 @@
+
+
 /*--------------------------------------------------------------------*/
 /* stra.c                                             */
 /* Author: Tara Shukla                                              */
@@ -44,7 +46,7 @@ char *Str_concat(char dest[], const char src[]){
     /*move the dest pointer to the end of dest array*/
     /*then copy src into that memory spot*/
    
-    dest = Str_copy(dest+destLen, src);
+    Str_copy(dest+destLen, src);
 
     return dest;
 }
@@ -108,4 +110,3 @@ char *Str_search (const char location[], const char target[]){
     return '\0';
 }
 /*--------------------------------------------------------------------*/
-
