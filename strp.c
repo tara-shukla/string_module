@@ -74,7 +74,7 @@ int Str_compare (const char *str1, const char *str2){
 /*searches for 1st occurence target str in location str*/
 char *Str_search (const char *location, const char *target){
     int subLen = Str_getLength(target);
-
+    int x = 0;
     assert (location!=NULL);
     assert (target!=NULL);
 
@@ -85,7 +85,7 @@ char *Str_search (const char *location, const char *target){
 
     while(*location!='\0'){
         if(*location==*target){
-            int x = 0; /*substring iterator*/
+            x = 0; /*substring iterator*/
             while (x<subLen){
                 if (*target!=*location) {
                     target -= x;
