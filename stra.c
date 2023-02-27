@@ -81,14 +81,14 @@ char *Str_search (const char location[], const char target[]){
     assert (location!=NULL);
     assert (target!=NULL);
 
-    if (subLen == 0) return (char*) location [0];
+    if (subLen == 0) return (char*) &location [0];
 
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
 
     
 
-    while(location[i]!='\0'){
+    // while(location[i]!='\0'){
         if(location[i]==target[0]){
             int y = i; /*in location string iterator*/
             int x = 0; /*substring iterator*/
