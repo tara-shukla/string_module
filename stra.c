@@ -95,7 +95,8 @@ char *Str_search (const char location[], const char target[]){
             while (x<subLen){
                 if (target[x]!=location[y]) break;
                 if (x == subLen-1){
-                    return &location[i];
+                    p=(char*)&location[i];
+                    return p;
                 }
                 y++;
                 x++;
