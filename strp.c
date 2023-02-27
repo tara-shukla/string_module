@@ -31,7 +31,7 @@ char *Str_copy (char *dest, const char *src){
         src++;
     }
     *dest = '\0';
-    return dest-Str_getLength(*src);
+    return dest-Str_getLength(src);
 }
 
 /*appends src string to end of dest string*/
