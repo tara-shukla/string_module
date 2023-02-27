@@ -77,7 +77,7 @@ int Str_compare (const char str1[], const char str2[]){
 char *Str_search (const char location[], const char target[]){
     int i = 0;
     int subLen = Str_getLength(target);
-    char *p = (char*)location;
+    char *p = (char*)location[0];
 
     assert (location!=NULL);
     assert (target!=NULL);

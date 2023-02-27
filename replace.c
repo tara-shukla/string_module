@@ -4,7 +4,6 @@
 /*--------------------------------------------------------------------*/
 
 #include "str.h"
-#include <string.h> /*TAKE THIS OUT AFTER TESTING PLZ LMAO*/
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
@@ -29,8 +28,13 @@ static size_t replaceAndWrite(const char *pcLine,
       return 0;
    }
 
-   /*use the regular stuff here first. replace and erase this when done debugging*/
-   
+   /*if pcTo doesn't appear, return 0*/
+   /*else iterate through pcLine, running search and copy*/
+
+   while(Str_search(pcLine,pcTo)!='\0'){
+      
+   }
+
    return 0; /*erase this*/
 
 }

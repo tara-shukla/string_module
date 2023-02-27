@@ -19,7 +19,7 @@ size_t Str_getLength(const char *pcSrc)
    return (size_t)(pcEnd - pcSrc);
 
 }
-
+ 
 /*makes a copy of the src string in the dest string*/
 char *Str_copy (char *dest, const char *src){
     int i = 0;
@@ -107,7 +107,6 @@ char *Str_search (const char *location, const char *target){
 
     /*match not found return null*/
     return '\0';
-
 }
 
 /*--------------------------------------------------------------------*/
