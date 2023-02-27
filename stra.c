@@ -30,7 +30,7 @@ char *Str_copy(char dest[], const char src[]){
         dest[i] = src[i];
         i++;
     }
-
+    dest[i] = src[i]; /*catches the 'up to and incl' terminal null char*/
     return dest;
 
 }

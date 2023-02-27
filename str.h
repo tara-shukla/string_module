@@ -7,7 +7,6 @@
 #define STR_INCLUDED
 #include<stddef.h>
 /*--------------------------------------------------------------------*/
-/*needs Str_getLength, Str_copy,Str_concat, Str_compare,Str_search*/
 
 /*Computes str length up to, not incl terminating null char*/
 size_t Str_getLength(const char *str);
