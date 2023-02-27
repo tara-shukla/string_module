@@ -30,7 +30,7 @@ static size_t replaceAndWrite(const char *pcLine,
    }
 
    /*use the regular stuff here first. replace and erase this when done debugging*/
-
+   
    return 0; /*erase this*/
 
 }
@@ -68,8 +68,10 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL){
+         /* Insert your code here. */
+   }
+      
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
