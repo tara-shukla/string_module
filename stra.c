@@ -30,14 +30,13 @@ char *Str_copy(char dest[], const char *src[]){ /*char *strcpy (char *dest, cons
         i++;
     }
 
-    
-    return *dest;
+    char *p = &dest;
+    return *p;
 
 }
 
 /*appends src string to end of dest string*/
 char *Str_concat(char *dest, const char *src){
-    int i = 0;
     int destLen = Str_getLength(dest);
     assert(dest!= NULL);
     assert(src != NULL);
@@ -46,9 +45,9 @@ char *Str_concat(char *dest, const char *src){
     /*move the dest pointer to the end of dest array*/
     /*then copy src into that memory spot*/
 
-    *dest = Str_copy(dest+destLen, *src);
-    return *dest;
+    dest = Str_copy(dest+destLen, *src);
 
+    return dest;
 }
 
 /*compares str1 to str2*/
@@ -89,12 +88,14 @@ char *Str_search (const char location[], const char target[]){
     while(location[i]!='\0'){
         if(location[i]==target[0]){
             int y = i; /*in location string iterator*/
-            for (int x= 0; x<subLen;x++){
+            int x = 0; /*substring iterator*/
+            while (x<subLen){
                 if (target[x]!=location[y]) break;
                 if (x == subLen-1){
                     return &location[i];
                 }
                 y++;
+                x++;
             }
         }
     }
