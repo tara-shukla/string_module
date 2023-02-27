@@ -26,7 +26,7 @@ char *Str_copy (char *dest, const char *src){
     assert(src != NULL);
 
     while (*src!='\0'){
-        dest = *src;
+        *dest = *src;
         dest++;
         src++;
     }
