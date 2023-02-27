@@ -33,7 +33,7 @@ char *Str_copy (char *dest, const char *src){
         i++;
     }
     *dest = '\0';
-    return dest-(i+1);
+    return dest-i;
 }
 
 /*appends src string to end of dest string*/
