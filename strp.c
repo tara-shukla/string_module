@@ -93,7 +93,7 @@ char *Str_search (const char *location, const char *target){
                     break;
                 }
                 if (x == subLen-1){
-                    return  (char*)location;
+                    return  (char*)(location-subLen);
                 }
                 x++;
                 target++;
