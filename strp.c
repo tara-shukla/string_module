@@ -22,6 +22,7 @@ size_t Str_getLength(const char *pcSrc)
 
 /*makes a copy of the src string in the dest string*/
 char *Str_copy (char *dest, const char *src){
+    int i = 0;
     assert(dest!= NULL); 
     assert(src != NULL);
 
@@ -29,9 +30,10 @@ char *Str_copy (char *dest, const char *src){
         *dest = *src;
         dest++;
         src++;
+        i++;
     }
     *dest = '\0';
-    return dest-Str_getLength(src);
+    return dest-(i+1);
 }
 
 /*appends src string to end of dest string*/
