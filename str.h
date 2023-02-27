@@ -13,7 +13,7 @@
 size_t Str_getLength(const char *str);
 
 /*makes a copy of the string pointed to src to the given destination string dest*/
-char Str_copy(char *dest, const char *src);
+char *Str_copy(char *dest, const char *src);
 
 /*appends src string to end of dest string*/
 char *Str_concat(char *dest, const char *src);
