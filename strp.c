@@ -39,7 +39,7 @@ char *Str_copy (char *dest, const char *src){
 /*appends src string to end of dest string*/
 char *Str_concat(char *dest, const char *src){
 
-    int destLen = Str_getLength(dest);
+    size_t destLen = Str_getLength(dest);
     assert(dest!= NULL);
     assert(src != NULL);
     
@@ -47,7 +47,7 @@ char *Str_concat(char *dest, const char *src){
     /*move the dest pointer to the end of dest array*/
     /*then copy src into that memory spot*/
    
-    Str_copy(dest+destLen, src);
+    (void)Str_copy(dest+destLen, src);
 
     return dest;
 }
@@ -76,7 +76,7 @@ int Str_compare (const char *str1, const char *str2){
 /*searches for 1st occurence of the target str in the location str*/
 /*returns pointer to that occurence*/
 char *Str_search (const char *location, const char *target){
-    int subLen = Str_getLength(target);
+    size_t subLen = Str_getLength(target);
     int x = 0;
     assert (location!=NULL);
     assert (target!=NULL);
@@ -89,13 +89,13 @@ char *Str_search (const char *location, const char *target){
     while(*location!='\0'){
         if(*location==*target){
             x = 0; /*substring iterator*/
-            while (x<subLen){
+            while ((size_t)x<subLen){
                 if (*target!=*location) {
                     target -= x;
                     location -=x;
                     break;
                 }
-                if (x == subLen-1){
+                if ((size_t)x == subLen-1){
                     return  (char*)(location-x);
                 }
                 x++;
@@ -107,7 +107,7 @@ char *Str_search (const char *location, const char *target){
     }
 
     /*match not found return null*/
-    return '\0';
+    return NULL;
 }
 
 /*--------------------------------------------------------------------*/
