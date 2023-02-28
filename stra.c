@@ -79,6 +79,7 @@ char *Str_search (const char location[], const char target[]){
     int index = 0;
     size_t subLen = Str_getLength(target);
     int subIterator;/*substring iterator*/
+    int locIterator;/*location iterator*/
 
     assert (location!=NULL);
     assert (target!=NULL);
@@ -90,9 +91,10 @@ char *Str_search (const char location[], const char target[]){
 
     while(location[index]!='\0'){
         subIterator = 0;
-        while((location[index]==target[subIterator])&(location[index]!='\0')
+        locIterator = index;
+        while((location[locIterator]==target[subIterator])&(location[index]!='\0')
                 &(target[index]!='\0')){
-            index++;
+            locIterator++;
             subIterator++;
         }
         if ((size_t)subIterator == subLen){
