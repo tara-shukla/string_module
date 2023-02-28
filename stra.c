@@ -1,5 +1,3 @@
-
-
 /*--------------------------------------------------------------------*/
 /* stra.c                                             */
 /* Author: Tara Shukla                                              */
@@ -78,8 +76,10 @@ int Str_compare (const char str1[], const char str2[]){
 /*searches for 1st occurence target str in location str*/
 /*returns pointer to that occurence*/
 char *Str_search (const char location[], const char target[]){
-    int i = 0;
+    int index = 0;
     size_t subLen = Str_getLength(target);
+    int locIterator;/*in location string iterator*/
+    int subIterator;/*substring iterator*/
 
     assert (location!=NULL);
     assert (target!=NULL);
@@ -89,20 +89,20 @@ char *Str_search (const char location[], const char target[]){
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
 
-    while(location[i]!='\0'){
-        if(location[i]==target[0]){
-            int y = i; /*in location string iterator*/
-            int x = 0; /*substring iterator*/
-            while ((size_t)x<subLen){
-                if (target[x]!=location[y]) break;
-                if ((size_t)x == (subLen-1)){
-                    return(char*)&location[i];
+    while(location[index]!='\0'){
+        if(location[index]==target[0]){
+            locIterator = index; 
+            subIterator = 0; 
+            while ((size_t)subIterator<subLen){
+                if (target[subIterator]!=location[locIterator]) break;
+                if ((size_t)subIterator == (subLen-1)){
+                    return(char*)&location[index];
                 }
-                y++;
-                x++;
+                locIterator++;
+                subIterator++;
             }
         }
-        i++;
+        index++;
     }
 
     /*match not found return null*/
