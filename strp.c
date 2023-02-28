@@ -90,12 +90,12 @@ char *Str_search (const char *location, const char *target){
 
     while(*location!='\0'){
         locIterator = (char*)location;
-        subIterator = 0;
-        while (*location==*target){
+        subIterator = (char*)target;
+        while (*locIterator==*subIterator){
             locIterator++;
             subIterator++;
         }
-        if ((size_t)subIterator == subLen) return (char*)location;
+        if (subIterator == target+subLen) return (char*)location;
         location++;
     }
 
