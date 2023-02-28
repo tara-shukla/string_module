@@ -91,7 +91,7 @@ char *Str_search (const char *location, const char *target){
     while(*location!='\0'){
         locIterator = (char*)location;
         subIterator = (char*)target;
-        while (*locIterator==*subIterator){
+        while ((*locIterator==*subIterator)&(*locIterator!='\0')&(*subIterator!='\0')){
             locIterator++;
             subIterator++;
         }
