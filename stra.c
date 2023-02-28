@@ -78,7 +78,6 @@ int Str_compare (const char str1[], const char str2[]){
 char *Str_search (const char location[], const char target[]){
     int index = 0;
     size_t subLen = Str_getLength(target);
-    int locIterator;/*in location string iterator*/
     int subIterator;/*substring iterator*/
 
     assert (location!=NULL);
@@ -96,7 +95,7 @@ char *Str_search (const char location[], const char target[]){
             index++;
             subIterator++;
         }
-        if (subIterator == subLen){
+        if ((size_t)subIterator == subLen){
             return (char*)location;
         }
 
