@@ -24,7 +24,7 @@ static size_t replaceAndWrite(const char *pcLine,
    char *index;
    int counter = 0;
 
-   int i =0;
+   size_t i =0;
    if (Str_getLength(pcFrom)==0){
       while(i<Str_getLength(pcLine)){
          putchar(*pcLine);
@@ -98,6 +98,8 @@ int main(int argc, char *argv[])
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL){
          /* Insert your code here. */
+         /*delete below line, this is just for compilation*/
+         replaceAndWrite(acLine,pcFrom,pcTo);
    }
       
 
