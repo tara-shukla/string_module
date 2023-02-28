@@ -24,8 +24,7 @@ static size_t replaceAndWrite(const char *pcLine,
 {
 
    char *index;
-   int counter = 0;
-   size_t i =0;
+   size_t counter = 0;
    size_t pcFromSize;
 
    assert(pcLine!=NULL);
