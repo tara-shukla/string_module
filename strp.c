@@ -77,18 +77,25 @@ int Str_compare (const char *str1, const char *str2){
 /*returns pointer to that occurence*/
 char *Str_search (const char *location, const char *target){
     size_t subLen = Str_getLength(target);
+    int locIterator;/*in location string iterator*/
+    int subIterator;/*substring iterator*/
+
     assert (location!=NULL);
     assert (target!=NULL);
-
+    
     if (subLen == 0) return (char*)location;
 
     /*iterate through location string, searching for first letter match*/
     /*when found, iterate until match found; else break*/
 
     while(*location!='\0'){
-        if ( (*location==*target)& (location==target)){
-            return (char*)location;
+        locIterator = location;
+        subIterator = 0;
+        while (*location==*target){
+            locIterator++;
+            subIterator++;
         }
+        if (subIterator == subLen) return (char*)location;
         location++;
     }
 
