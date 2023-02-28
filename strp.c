@@ -86,7 +86,7 @@ char *Str_search (const char *location, const char *target){
     /*when found, iterate until match found; else break*/
 
     while(*location!='\0'){
-        if ( (*location==*target)& (Str_compare(location,target))){
+        if ( (*location==*target)& (location==target)){
             return (char*)location;
         }
         location++;
