@@ -21,6 +21,7 @@ static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
 
+   int *index;
    if (Str_getLength(pcFrom) ==0){
       for (int i = 0; i<Str_getLength(pcLine);i++){
          putchar(pcLine[i]);
@@ -29,13 +30,33 @@ static size_t replaceAndWrite(const char *pcLine,
    }
 
    /*if pcTo doesn't appear, return 0*/
-   /*else iterate through pcLine, running search and copy*/
-
-   while(Str_search(pcLine,pcTo)!='\0'){
+   index = Str_search(pcLine,pcFrom);
+   int counter = 0;
+   while (index!='\0'){
+      /*if found index of pcFrom, print pcTo*/
+      if(index = pcLine){
+         counter++;
+         while(*pcTo!='\0'){
+            putchar(*pcTo);
+            pcTo++;
+         }
+         pcLine+=Str_getLength(pcFrom);
+      }
+      /*else print pcLine*/
+      else{
+         putchar(*pcLine);
+         pcLine++;
+      }
       
+      index = Str_search(pcLine,pcFrom);
    }
-
-   return 0; /*erase this*/
+   /*print the rest of pcLine after no more replacements*/
+   while(*pcLine!='\0'){
+      putchar(*pcLine);
+      pcLine++;
+   }
+   putchar('/0');
+   return counter;
 
 }
 
