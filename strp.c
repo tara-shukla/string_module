@@ -95,7 +95,7 @@ char *Str_search (const char *location, const char *target){
             locIterator++;
             subIterator++;
         }
-        if (subIterator == target+subLen) return (char*)location;
+        if (*subIterator == '\0') return (char*)location;
         location++;
     }
 
