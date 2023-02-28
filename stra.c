@@ -98,7 +98,7 @@ char *Str_search (const char location[], const char target[]){
             subIterator++;
         }
         if ((size_t)subIterator == subLen){
-            return (char*)location[index];
+            return (char*)&location[index];
         }
 
         index++;
