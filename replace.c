@@ -21,18 +21,20 @@ static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
 
-   int *index;
+   char *index;
+   int counter = 0;
+
+
    if (Str_getLength(pcFrom) ==0){
       for (int i = 0; i<Str_getLength(pcLine);i++){
          putchar(pcLine[i]);
       }
+      
       return 0;
    }
 
-   /*if pcTo doesn't appear, return 0*/
    index = Str_search(pcLine,pcFrom);
-   int counter = 0;
-   while (index!='\0'){
+   while (*index!='\0'){
       /*if found index of pcFrom, print pcTo*/
       if(index = pcLine){
          counter++;
