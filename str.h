@@ -9,7 +9,7 @@
 /*--------------------------------------------------------------------*/
 
 /*Computes and returns str length up to, not incl terminating null char*/
-size_t Str_getLength(const char *str);
+size_t Str_getLength(const char *pcSrc);
 
 /*makes a copy of the string pointed to src to the given destination string dest*/
 /*returns pointer to copy*/
