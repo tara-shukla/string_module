@@ -87,21 +87,8 @@ char *Str_search (const char *location, const char *target){
     /*when found, iterate until match found; else break*/
 
     while(*location!='\0'){
-        if(*location==*target){
-            subIterator = 0; 
-            while ((size_t)subIterator<subLen){
-                if (*target!=*location) {
-                    target -= subIterator;
-                    location -=subIterator;
-                    break;
-                }
-                if ((size_t)subIterator == subLen-1){
-                    return  (char*)(location-subIterator);
-                }
-                subIterator++;
-                target++;
-                location++;
-            }
+        if ( (*location==*target)& (Str_compare(location,target))){
+            return location;
         }
         location++;
     }
