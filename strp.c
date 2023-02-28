@@ -7,7 +7,7 @@
 #include <assert.h>
 
 /*--------------------------------------------------------------------*/
-/*Computes str length up to, not incl terminating null char*/
+/*Computes and returns str length up to, not incl terminating null char*/
 /*Str_getLength implementation taken from assignment desc*/
 size_t Str_getLength(const char *pcSrc)
 {
@@ -20,7 +20,8 @@ size_t Str_getLength(const char *pcSrc)
 
 }
  
-/*makes a copy of the src string in the dest string*/
+/*makes a copy of the string pointed to src to the given destination string dest*/
+/*returns pointer to copy*/
 char *Str_copy (char *dest, const char *src){
     int i = 0;
     assert(dest!= NULL); 
@@ -37,6 +38,7 @@ char *Str_copy (char *dest, const char *src){
 }
 
 /*appends src string to end of dest string*/
+/*returns pointer to the concatenated array*/
 char *Str_concat(char *dest, const char *src){
 
     size_t destLen = Str_getLength(dest);
@@ -44,15 +46,13 @@ char *Str_concat(char *dest, const char *src){
     assert(src != NULL);
     
 
-    /*move the dest pointer to the end of dest array*/
-    /*then copy src into that memory spot*/
-   
+    /*call Str_copy on pointer to end of dest array, and src*/
     (void)Str_copy(dest+destLen, src);
 
     return dest;
 }
 
-/*compares str1 to str2*/
+/*compares str1 to str2, returns int (0 if equal, neg if less, pos if greater)*/
 int Str_compare (const char *str1, const char *str2){
     assert(str1!= NULL);
     assert(str2 != NULL);
@@ -77,7 +77,7 @@ int Str_compare (const char *str1, const char *str2){
 /*returns pointer to that occurence*/
 char *Str_search (const char *location, const char *target){
     size_t subLen = Str_getLength(target);
-    int x = 0;
+    int subIterator = 0;/*substring iterator*/
     assert (location!=NULL);
     assert (target!=NULL);
 
@@ -88,17 +88,17 @@ char *Str_search (const char *location, const char *target){
 
     while(*location!='\0'){
         if(*location==*target){
-            x = 0; /*substring iterator*/
-            while ((size_t)x<subLen){
+            subIterator = 0; 
+            while ((size_t)subIterator<subLen){
                 if (*target!=*location) {
-                    target -= x;
-                    location -=x;
+                    target -= subIterator;
+                    location -=subIterator;
                     break;
                 }
-                if ((size_t)x == subLen-1){
-                    return  (char*)(location-x);
+                if ((size_t)subIterator == subLen-1){
+                    return  (char*)(location-subIterator);
                 }
-                x++;
+                subIterator++;
                 target++;
                 location++;
             }

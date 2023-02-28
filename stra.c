@@ -9,7 +9,7 @@
 #include <assert.h>
 
 /*--------------------------------------------------------------------*/
-/*Computes str length up to, not incl terminating null char*/
+/*Computes and returns str length up to, not incl terminating null char*/
 /*Str_getLength implementation taken from assignment desc*/
 size_t Str_getLength(const char pcSrc[])
 {
@@ -20,7 +20,8 @@ size_t Str_getLength(const char pcSrc[])
    return uLength;
 }
 
-/*makes a copy of the src string to the dest string*/
+/*makes a copy of the string pointed to src to the given destination string dest*/
+/*returns pointer to copy*/
 char *Str_copy(char dest[], const char src[]){ 
     int i = 0;
 
@@ -37,6 +38,7 @@ char *Str_copy(char dest[], const char src[]){
 }
 
 /*appends src string to end of dest string*/
+/*returns pointer to the concatenated array*/
 char *Str_concat(char dest[], const char src[]){
     size_t destLen = Str_getLength(dest);
     assert(dest!= NULL);
@@ -51,7 +53,7 @@ char *Str_concat(char dest[], const char src[]){
     return dest;
 }
 
-/*compares str1 to str2*/
+/*compares str1 to str2, returns int (0 if equal, neg if less, pos if greater)*/
 int Str_compare (const char str1[], const char str2[]){
     int i = 0;
 
@@ -74,6 +76,7 @@ int Str_compare (const char str1[], const char str2[]){
 }
 
 /*searches for 1st occurence target str in location str*/
+/*returns pointer to that occurence*/
 char *Str_search (const char location[], const char target[]){
     int i = 0;
     size_t subLen = Str_getLength(target);
