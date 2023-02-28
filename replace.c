@@ -97,9 +97,7 @@ int main(int argc, char *argv[])
    pcTo = argv[2];
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL){
-         /* Insert your code here. */
-         /*delete below line, this is just for compilation*/
-         replaceAndWrite(acLine,pcFrom,pcTo);
+         uReplaceCount = replaceAndWrite(acLine,pcFrom,pcTo);
    }
       
 
