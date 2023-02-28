@@ -90,18 +90,16 @@ char *Str_search (const char location[], const char target[]){
     /*when found, iterate until match found; else break*/
 
     while(location[index]!='\0'){
-        if(location[index]==target[0]){
-            locIterator = index; 
-            subIterator = 0; 
-            while ((size_t)subIterator<subLen){
-                if (target[subIterator]!=location[locIterator]) break;
-                if ((size_t)subIterator == (subLen-1)){
-                    return(char*)&location[index];
-                }
-                locIterator++;
-                subIterator++;
-            }
+        subIterator = 0;
+        while((location[index]==target[subIterator])&(location[index]!='\0')
+                &(target[index]!='\0')){
+            index++;
+            subIterator++;
         }
+        if (subIterator == subLen){
+            return (char*)location;
+        }
+
         index++;
     }
 

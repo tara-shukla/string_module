@@ -86,7 +86,7 @@ char *Str_search (const char *location, const char *target){
     if (subLen == 0) return (char*)location;
 
     /*iterate through location string, searching for first letter match*/
-    /*when found, iterate until match found; else break*/
+    /*when found, iterate until match found, or*/
 
     while(*location!='\0'){
         locIterator = (char*)location;
