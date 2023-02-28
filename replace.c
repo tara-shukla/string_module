@@ -24,6 +24,7 @@ static size_t replaceAndWrite(const char *pcLine,
    char *index;
    int counter = 0;
 
+   /*note: changed this from the given due to error w for loop in compilation*/
    size_t i =0;
    if (Str_getLength(pcFrom)==0){
       while(i<Str_getLength(pcLine)){
@@ -97,7 +98,7 @@ int main(int argc, char *argv[])
    pcTo = argv[2];
 
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL){
-         uReplaceCount = replaceAndWrite(acLine,pcFrom,pcTo);
+         uReplaceCount += replaceAndWrite(acLine,pcFrom,pcTo);
    }
       
 
