@@ -24,19 +24,20 @@ static size_t replaceAndWrite(const char *pcLine,
    char *index;
    int counter = 0;
 
-
-   if (Str_getLength(pcFrom) ==0){
-      for (int i = 0; i<Str_getLength(pcLine);i++){
-         putchar(pcLine[i]);
+   int i =0;
+   if (Str_getLength(pcFrom)==0){
+      while(i<Str_getLength(pcLine)){
+         putchar(*pcLine);
+         pcLine++;
+         i++;
       }
-      
       return 0;
    }
 
    index = Str_search(pcLine,pcFrom);
    while (*index!='\0'){
       /*if found index of pcFrom, print pcTo*/
-      if(index = pcLine){
+      if(index == pcLine){
          counter++;
          while(*pcTo!='\0'){
             putchar(*pcTo);
@@ -57,7 +58,7 @@ static size_t replaceAndWrite(const char *pcLine,
       putchar(*pcLine);
       pcLine++;
    }
-   putchar('/0');
+   putchar('\0');
    return counter;
 
 }
