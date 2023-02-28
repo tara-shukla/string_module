@@ -90,9 +90,9 @@ char *Str_search (const char location[], const char target[]){
         if(location[i]==target[0]){
             int y = i; /*in location string iterator*/
             int x = 0; /*substring iterator*/
-            while (x<subLen){
+            while ((size_t)x<subLen){
                 if (target[x]!=location[y]) break;
-                if (x == subLen-1){
+                if ((size_t)x == (subLen-1)){
                     return(char*)&location[i];
                 }
                 y++;
