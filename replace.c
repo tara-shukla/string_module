@@ -17,11 +17,12 @@
    assumptions about the maximum number of replacements or the
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
+/*replaces pcFrom with pcTo each time it occurs in pcLine.*/
+/*returns number of replacements*/
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
 
-   
    char *index;
    int counter = 0;
    size_t i =0;
@@ -39,15 +40,17 @@ static size_t replaceAndWrite(const char *pcLine,
    
    index = Str_search(pcLine,pcFrom);
    while (index!=NULL){
-      /*if found index of pcFrom, print pcTo*/
+      /*iterate through pcLine, printing until index of pcFrom*/
       while(pcLine!=index){
          putchar(*pcLine);
          pcLine++;
       }
+      /*print pcTo and increment pcLine*/
       counter++;
       printf("%s",pcTo);
       pcLine+=pcFromSize;
       
+      /*search for next occurence*/
       index = Str_search(pcLine,pcFrom);
    }
    /*print the rest of pcLine after no more replacements*/
@@ -96,7 +99,6 @@ int main(int argc, char *argv[])
          uReplaceCount += replaceAndWrite(acLine,pcFrom,pcTo);
    }
       
-
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
    

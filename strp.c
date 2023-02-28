@@ -73,7 +73,8 @@ int Str_compare (const char *str1, const char *str2){
     return 0;
 }
 
-/*searches for 1st occurence target str in location str*/
+/*searches for 1st occurence of the target str in the location str*/
+/*returns pointer to that occurence*/
 char *Str_search (const char *location, const char *target){
     int subLen = Str_getLength(target);
     int x = 0;
