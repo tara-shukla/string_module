@@ -77,7 +77,6 @@ int Str_compare (const char *str1, const char *str2){
 /*returns pointer to that occurence*/
 char *Str_search (const char *location, const char *target){
     size_t subLen = Str_getLength(target);
-    int subIterator = 0;/*substring iterator*/
     assert (location!=NULL);
     assert (target!=NULL);
 
@@ -88,7 +87,7 @@ char *Str_search (const char *location, const char *target){
 
     while(*location!='\0'){
         if ( (*location==*target)& (Str_compare(location,target))){
-            return location;
+            return (char*)location;
         }
         location++;
     }
